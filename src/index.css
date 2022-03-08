@@ -1,13 +1,85 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  letter-spacing: 2px;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+.title-link {
+  width: max-content;
+  margin: 0 auto;
+}
+
+@media (min-width: 800px) {
+  .text-blog {
+    width: 60ch;
+  }
+}
+
+.icon {
+  cursor: pointer;
+}
+
+.submit-btn {
+  background: transparent !important;
+  border: 0 !important;
+  outline: none !important;
+}
+
+.error-msg {
+  font-size: 13px !important;
+  position: relative;
+}
+
+.error-msg::before {
+  content: "*";
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: inherit;
+  transform: translateX(-100%);
+}
+/*Loading*/
+.alert-wrapper span {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  background: var(--clr-green);
+  border-radius: 50%;
+}
+
+.first {
+  animation: 0.5s linear 0s infinite alternate load;
+  margin-right: var(--m--s);
+}
+
+.second {
+  animation: 0.5s linear 0.5s infinite alternate load;
+  margin-right: var(--m--s);
+}
+
+.Third {
+  animation: 0.5s linear 1s infinite alternate load;
+}
+
+@keyframes load {
+  0% {
+    opacity: 0;
+    transform: translatey(-10px);
+  }
+  50% {
+    opacity: 0.6;
+    transform: translatey(-5px);
+  }
+  100% {
+    opacity: 1;
+    transform: translatey(0);
+  }
 }
